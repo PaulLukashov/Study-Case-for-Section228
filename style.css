@@ -62,7 +62,8 @@ body {
   outline: none;
   width: 300px;
   line-height: 48px;
-  border: 1px solid #F1F2F4;
+  height: 48px;
+  border: 1px solid rgba(241, 242, 244, 0.24);
   border-radius: 12px;
   font-style: italic;
   font-size: 14px;
@@ -75,14 +76,15 @@ body {
 }
 
 .contact-form input[type="text"]:focus {
-  opacity: 0.5;
+  border-color: #F1F2F4;
 }
 
 .contact-form input[type="email"] {
   outline: none;
   width: 300px;
   line-height: 48px;
-  border: 1px solid #F1F2F4;
+  height: 48px;
+  border: 1px solid rgba(241, 242, 244, 0.24);
   border-radius: 12px;
   font-style: italic;
   font-size: 14px;
@@ -95,14 +97,14 @@ body {
 }
 
 .contact-form input[type="email"]:focus {
-  opacity: 0.5;
+  border-color: #F1F2F4;
   border-radius: 12px;
 }
 
 .contact-form textarea {
   outline: none;
   width: 300px;
-  border: 1px solid #F1F2F4;
+  border: 1px solid rgba(241, 242, 244, 0.24);
   border-radius: 12px;
   background-color: transparent;
   padding-left: 24px;
@@ -119,7 +121,7 @@ body {
 }
 
 .contact-form textarea:focus {
-  opacity: 0.5;
+  border-color: #F1F2F4;
   border-radius: 12px;
 }
 
