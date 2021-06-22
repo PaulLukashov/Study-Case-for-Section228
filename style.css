@@ -1,0 +1,214 @@
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  @import 
+  url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  letter-spacing: -0.035em;
+}
+
+.contact-us {
+  width: 1440px;
+  height: 700px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 623px auto;
+  grid-template-areas: "form advantages";
+
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(-45deg, #000 60% , #ca6ced);
+
+}
+
+.contact-form h3 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  color: #F1F2F4;
+  margin-top: 108px;
+}
+
+.contact-form p {
+  width: 424px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  color: #F1F2F4;
+  margin-top: 18px;
+  margin-bottom: 48px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input[type="text"] {
+  outline: none;
+  width: 300px;
+  line-height: 48px;
+  border: 1px solid #F1F2F4;
+  border-radius: 12px;
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 200;
+  color: #F1F2F4;
+  background-color: transparent;
+  padding-left: 24px;
+  box-shadow: none;
+  margin-bottom: 24px;
+}
+
+.contact-form input[type="text"]:focus {
+  opacity: 0.5;
+}
+
+.contact-form input[type="email"] {
+  outline: none;
+  width: 300px;
+  line-height: 48px;
+  border: 1px solid #F1F2F4;
+  border-radius: 12px;
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 200;
+  color: #F1F2F4;
+  background-color: transparent;
+  padding-left: 24px;
+  box-shadow: none;
+  margin-bottom: 36px;
+}
+
+.contact-form input[type="email"]:focus {
+  opacity: 0.5;
+  border-radius: 12px;
+}
+
+.contact-form textarea {
+  outline: none;
+  width: 300px;
+  border: 1px solid #F1F2F4;
+  border-radius: 12px;
+  background-color: transparent;
+  padding-left: 24px;
+  box-shadow: none;
+  height: 84px;
+  margin-bottom: 60px;
+  padding-top: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-style: italic;
+  font-weight: 200;
+  color: #F1F2F4;
+}
+
+.contact-form textarea:focus {
+  opacity: 0.5;
+  border-radius: 12px;
+}
+
+.contact-form textarea::placeholder {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-style: italic;
+  font-weight: 200;
+  color: #F1F2F4;
+}
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-btn:hover {
+  opacity: 0.8;
+}
+
+.submit-btn label {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #f1f2f4;
+  margin-right: 13px;
+}
+
+.submit-btn input[type="submit"] {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: url(img/Subtract.png) no-repeat 50% 50%;
+  font-size: 0;
+  border: none;
+  transform: rotate(45deg);
+}
+
+.advantages {
+  display: flex;
+  flex-direction: column;
+  padding-left: 115px;
+}
+
+
+.advantages h2 {
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 300;
+  margin-top: 96px;
+  color: #111111;
+}
+
+.advantages h2 b {
+  font-weight: 700;
+}
+
+.advantages p {
+  width: 424px;
+  line-height: 28px;
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: 36px; 
+  color: #111111;
+}
+
+.advantages dl {
+  margin-top: 96px;
+  display: grid;
+  grid-template-columns: 184px 340px;
+  grid-template-rows: auto auto auto;
+  grid-row-gap: 24px;
+}
+
+.advantages dt {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 48px;
+}
+
+.advantages dd {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+}
+  
+  
+
