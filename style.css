@@ -14,14 +14,18 @@ body {
   letter-spacing: -0.035em;
 }
 
-.contact-us {
-  width: 1440px;
-  height: 700px;
+.container {
+  max-width: 1440px;
+  min-width: 360px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 623px auto;
 }
 
+.contact-us {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 43.26% auto;
+}
 
 .contact-form {
   display: flex;
@@ -31,6 +35,8 @@ body {
 }
 
 .contact-form h3 {
+  margin: 0;
+  padding: 0;
   font-weight: 500;
   font-size: 24px;
   line-height: 36px;
@@ -40,7 +46,9 @@ body {
 }
 
 .contact-form p {
-  width: 424px;
+  margin: 0;
+  padding: 0;
+  width: 68.1%;
   font-weight: 300;
   font-size: 18px;
   line-height: 28px;
@@ -51,13 +59,17 @@ body {
 }
 
 .contact-form form {
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .contact-form input[type="text"] {
   outline: none;
-  width: 300px;
+  width: 48%;
   line-height: 48px;
   height: 48px;
   border: 1px solid rgba(241, 242, 244, 0.24);
@@ -79,7 +91,7 @@ body {
 
 .contact-form input[type="email"] {
   outline: none;
-  width: 300px;
+  width: 48%;
   line-height: 48px;
   height: 48px;
   border: 1px solid rgba(241, 242, 244, 0.24);
@@ -102,7 +114,7 @@ body {
 
 .contact-form textarea {
   outline: none;
-  width: 300px;
+  width: 48%;
   border: 1px solid rgba(241, 242, 244, 0.24);
   border-radius: 12px;
   background-color: transparent;
@@ -139,10 +151,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  margin-bottom: 80px;
 }
 
 .submit-btn span {
+  margin: 0;
+  padding: 0;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
@@ -152,6 +166,8 @@ body {
 }
 
 button {
+  margin: 0;
+  padding: 0;
   transition: 0.5s;
   display: inline-block;
   width: 36px;
@@ -167,13 +183,19 @@ button {
 }
 
 .advantages {
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   padding-left: 115px;
+  padding-bottom: 100px;
 }
 
 
 .advantages h2 {
+  margin: 0;
+  padding: 0;
+  width: 79.2%;
   font-size: 36px;
   line-height: 48px;
   font-weight: 300;
@@ -186,7 +208,9 @@ button {
 }
 
 .advantages p {
-  width: 424px;
+  margin: 0;
+  padding: 0;
+  width: 60.4%;
   line-height: 28px;
   font-size: 18px;
   font-weight: 300;
@@ -195,24 +219,97 @@ button {
 }
 
 .advantages dl {
+  margin: 0;
+  padding: 0;
+  width: 74.644%;
   margin-top: 96px;
   display: grid;
-  grid-template-columns: 184px 340px;
+  grid-template-columns: 35% 65%;
   grid-template-rows: auto auto auto;
   grid-row-gap: 24px;
 }
 
 .advantages dt {
+  margin: 0;
+  padding: 0;
   font-weight: bold;
   font-size: 48px;
   line-height: 48px;
 }
 
 .advantages dd {
+  margin: 0;
+  padding: 0;
   font-weight: 300;
   font-size: 16px;
   line-height: 24px;
 }
   
   
+@media (max-width: 1440px) {
+  .container{
+    max-width: 970px;
+  }
+  .contact-form input[type="text"],
+  .contact-form input[type="email"] {
+    width: 60%;
+  }
+  .contact-form textarea {
+    width: 60%;
+  }
+}
 
+@media (max-width: 992px) {
+  .container{
+    max-width: 750px;
+  }
+  .contact-us {
+  grid-template-columns: 1fr;
+  }
+  .contact-form {
+    order: 2;
+  }
+  .contact-form input[type="text"],
+  .contact-form input[type="email"] {
+    width: 60;
+  }
+  .contact-form textarea {
+    width: 60%;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .container{
+    max-width: none;
+  }
+  .contact-us {
+  grid-template-columns: 1fr;
+  }
+  .contact-form {
+    order: 2;
+  }
+  .contact-form input[type="text"],
+  .contact-form input[type="email"] {
+    width: 86.667%;
+  }
+  .contact-form textarea {
+    width: 86.667%;
+  }
+  .advantages dd {
+    margin-left: 30px;
+  }
+  .advantages {
+    padding-left: 24px;
+    align-items: flex-start;
+  }
+  .advantages h2 {
+    width: 90%;
+  }
+  .advantages p {
+    width: 90%;
+  }
+  .advantages dl {
+    width: 90%;
+  }
+}
