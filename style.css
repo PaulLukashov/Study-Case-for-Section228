@@ -12,11 +12,11 @@ body {
   font-family: 'Inter', sans-serif;
   font-size: 18px;
   letter-spacing: -0.035em;
+  min-width: 320px;
 }
 
 .container {
   max-width: 1440px;
-  min-width: 360px;
   margin: 0 auto;
 }
 
@@ -82,7 +82,7 @@ body {
   padding-left: 24px;
   box-shadow: none;
   margin-bottom: 24px;
-  transition: 0.5s;
+  transition: border-color 0.5s;
 }
 
 .contact-form input[type="text"]:focus {
@@ -104,7 +104,7 @@ body {
   padding-left: 24px;
   box-shadow: none;
   margin-bottom: 36px;
-  transition: 0.5s;
+  transition: border-color 0.5s;
 }
 
 .contact-form input[type="email"]:focus {
@@ -129,12 +129,11 @@ body {
   font-style: italic;
   font-weight: 200;
   color: #F1F2F4;
-  transition: 0.5s;
+  transition: border-color 0.5s;
 }
 
 .contact-form textarea:focus {
   border-color: #F1F2F4;
-  border-radius: 12px;
 }
 
 .contact-form textarea::placeholder {
@@ -142,9 +141,10 @@ body {
   font-size: 14px;
   line-height: 24px;
   font-style: italic;
-  font-weight: 200;
-  color: #F1F2F4;
+  font-weight: 300;
 }
+
+
 
 .submit-btn {
   text-align: center;
@@ -168,7 +168,7 @@ body {
 button {
   margin: 0;
   padding: 0;
-  transition: 0.5s;
+  transition: opacity 0.5s;
   display: inline-block;
   width: 36px;
   height: 36px;
