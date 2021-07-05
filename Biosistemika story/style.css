@@ -10,6 +10,14 @@
   padding: 0;
 }
 
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   font-size: 18px;
@@ -236,23 +244,19 @@ article > h2 span{
   padding-right: 0;
 }
 
-.CCO {
+.CCO-container {
   margin-top: 60px;
   display: flex;
-  flex-direction: column;
-  padding-left: 125px;
-  padding-bottom: 14px;
-  position: relative;
 }
 
-.CCO::before {
-  content: "";
-  position: absolute;
-  background: url("img/Rectangle 18.png") no-repeat; 
+.CCO-container img {
   width: 96px;
   height: 96px;
-  bottom: 0;
-  left:0;
+  margin-right: 29px;
+}
+
+.CCO-container dl {
+  align-self: center;
 }
 
 .CCO dt {
@@ -263,35 +267,34 @@ article > h2 span{
 }
 
 .CCO dd {
-font-weight: 500;
-font-size: 18px;
-line-height: 24px;
-color: #2B2B2B;
-opacity: 0.48;
-margin-top: 8px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #2B2B2B;
+  opacity: 0.48;
+  margin-top: 8px;
 }
 
 .company-descr {
-font-style: italic;
-font-weight: 400;
-font-size: 24px;
-line-height: 36px;
-color: #303033;
-margin-top: 24px;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: #303033;
+  margin-top: 24px;
 }
 
 .team {
   margin-top: 60px;
   display: flex;
   flex-direction: column;
-
 }
 
 .team h3 {
-font-weight: 400;
-font-size: 36px;
-line-height: 48px;
-color: #303033;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 48px;
+  color: #303033;
 }
 
 .team-members {
@@ -299,29 +302,17 @@ color: #303033;
   margin-top: 36px;
 }
 
-.team-members dl{
-  position: relative;
-  padding-left: 90px;
-  padding-bottom: 6px;
-}
-
-.team-members dl:first-child {
+.team-member {
+  display: flex;
   margin-right: 72px;
 }
 
-.team-members dl::before{
-  content: "";
-  position: absolute;
+.team-member img {
+  margin-right: 18px;
   width: 72px;
   height: 72px;
-  left: 0;
-  bottom: 0;
-  background: url("img/bg.png") no-repeat;
 }
 
-.team-members dl:last-child::before{
-  background: url("img/bg (1).png") no-repeat;
-}
 
 .team-members dl dt {
   font-weight: 500;
@@ -343,20 +334,20 @@ color: #303033;
 }
 
 .summary h2 {
-font-weight: 500;
-font-size: 36px;
-line-height: 48px;
-color: #303033;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 48px;
+  color: #303033;
 }
 
 .summary p,
 .main-takeaway p,
 .problems p {
-font-weight: 300;
-font-size: 24px;
-line-height: 36px;
-color: #5F6066;
-margin-top: 24px;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 36px;
+  color: #5F6066;
+  margin-top: 24px;
 }
 
 .main-takeaway {
@@ -364,10 +355,10 @@ margin-top: 24px;
 }
 
 .main-takeaway h2 {
-font-weight: 500;
-font-size: 36px;
-line-height: 48px;
-color: #303033;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 48px;
+  color: #303033;
 }
 
 .main-takeaway p span {
