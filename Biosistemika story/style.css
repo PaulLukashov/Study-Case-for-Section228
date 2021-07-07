@@ -12,10 +12,13 @@
 
 .visually-hidden {
   position: absolute;
-  clip: rect(0 0 0 0);
   width: 1px;
   height: 1px;
   margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
 }
 
 body {
@@ -23,53 +26,64 @@ body {
   font-size: 18px;
   letter-spacing: -0.035em;
   overflow-x: hidden;
+  min-width: 320px;
 }
 
 .container {
-  width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
-  position: relative;
-}
-
-main {
   display: grid;
-  grid-template-columns: 381px auto;
+  grid-template-columns: 26.46% auto;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:  "back-to-cases main-h2"
+                        "short-descr results-table"
+                        "social-bar CCO-container"
+                        "case-data company-descr"
+                        ". team"
+                        ". summary"
+                        ". main-takeaway"
+                        ". problems"
+                        ". reason-to-partner"
+                        ". what-we-did"
+                        ". results"
+                        ". tags";
+
+
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
-aside {
-  display: flex;
-  flex-direction: column;
-  margin-left: 48px;
+article {
   position: relative;
 }
 
-aside::before {
+article::before {
   content: "";
   position: absolute;
   background: url(img/dotted-circle.png) no-repeat;
   width: 1259px;
   height: 1258px;
-  bottom: 1800px;
-  right: 200px;
+  top: 0;
+  right: -550px;
   animation-name: circle-rotation;
-  animation-duration: 150s;
+  animation-duration: 250s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
-aside::after {
+article::after {
   content: "";
   position: absolute;
   background: url(img/gradient+blur.png) no-repeat;
   width: 1728px;
   height: 1438px;
-  bottom: 1800px;
-  right: 0;
+  top: -35px;
+  right: -730px;
 }
 
+
 .back-to-cases {
+  grid-area: back-to-cases;
   font-size: 14px;
   line-height: 24px;
   font-weight: 500;
@@ -77,6 +91,7 @@ aside::after {
   outline: none;
   background: none;
   align-self: flex-start;
+  text-align: left;
 }
 
 .back-to-cases a{
@@ -89,11 +104,25 @@ aside::after {
   opacity: 0.5;
 }
 
-aside dl {
-  margin-top: 84px;
+.short-descr {
+  grid-area: short-descr;
+  display: flex;
+  flex-direction: column;
 }
 
-aside dl dt {
+.short-descr div {
+  margin-top: 24px;
+}
+
+.short-descr div:first-child {
+  margin-top: 0;
+}
+
+.short-descr div:last-child {
+  display: none;
+}
+
+.short-descr dt {
   font-size: 12px;
   line-height: 14px;
   text-transform: uppercase;
@@ -101,7 +130,7 @@ aside dl dt {
   color: #5F6066;
 }
 
-aside dl dd {
+.short-descr dd {
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
@@ -110,12 +139,13 @@ aside dl dd {
   margin-bottom: 24px;
 }
 
-aside dl dd:last-child {
+.short-descr dd:last-child {
   margin-bottom: 0;
 }
 
 .social-bar {
   margin-top: 60px;
+  grid-area: social-bar;
 }
 
 .social-bar div {
@@ -160,6 +190,7 @@ aside dl dd:last-child {
 
 .case-data {
   margin-top: 52px;
+  grid-area: case-data;
 }
 
 .case-data .year{
@@ -178,52 +209,65 @@ aside dl dd:last-child {
   margin-top: 4px;
 }
 
-article {
-  display: flex;
-  flex-direction: column;
-  width: 690px;
+.animation-wrapper {
+  position: relative;
 }
 
-article::before {
+.animation-wrapper::before {
   content: "";
   position: absolute;
   background: url(img/dotted-circle.png) no-repeat;
   width: 1259px;
   height: 1258px;
-  top: 240px;
-  left: 935px;
+  bottom: 2000px;
+  left: -822px;
   animation-name: circle-rotation;
-  animation-duration: 150s;
+  animation-duration: 250s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  overflow: hidden;
+  z-index: -1;
 }
 
-article::after{
+.animation-wrapper::after{
   content: "";
   position: absolute;
   background: url(img/gradient+blur.png) no-repeat;
   width: 1728px;
   height: 1438px;
-  top: 150px;
-  left: 700px;
+  bottom: 2035px;
+  left: -1002px;
+  z-index: -2;
 }
 
-article > h2 {
+.main-h2 {
   font-size: 36px;
   line-height: 48px;
   font-weight: 500;
   color: #303033;
+  grid-area: main-h2;
+  width: 65.16%;
 }
 
-article > h2 span{
+.main-h2 span{
   color: #005FFF;
 }
 
-.results {
+.results-table {
   margin-top: 36px;
+  grid-area: results-table;
+  width: 65.16%;
+  height: 68px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.results th {
+.results-table div {
+  display: flex;
+  flex-direction: column;
+}
+
+.results-table dt {
   font-size: 24px;
   line-height: 36px;
   font-weight: 700;
@@ -231,32 +275,31 @@ article > h2 span{
   text-align-last: left;
 }
 
-.results td {
+.results-table dd {
   font-size: 18px;
   line-height: 24px;
   font-weight: 300;
   color: #2B2B2B;
   opacity: 0.6;
   padding-right: 48px;
+  margin-top: 8px;
 }
 
-.results td:last-child {
+.results-table td:last-child {
   padding-right: 0;
 }
 
 .CCO-container {
-  margin-top: 60px;
   display: flex;
+  align-items: center;
+  grid-area: CCO-container;
+  width: 65.16%;
 }
 
 .CCO-container img {
   width: 96px;
   height: 96px;
   margin-right: 29px;
-}
-
-.CCO-container dl {
-  align-self: center;
 }
 
 .CCO dt {
@@ -272,7 +315,6 @@ article > h2 span{
   line-height: 24px;
   color: #2B2B2B;
   opacity: 0.48;
-  margin-top: 8px;
 }
 
 .company-descr {
@@ -282,12 +324,14 @@ article > h2 span{
   line-height: 36px;
   color: #303033;
   margin-top: 24px;
+  grid-area: company-descr;
+  width: 65.16%;
 }
 
 .team {
   margin-top: 60px;
-  display: flex;
-  flex-direction: column;
+  grid-area: team;
+  width: 65.16%;
 }
 
 .team h3 {
@@ -300,6 +344,7 @@ article > h2 span{
 .team-members {
   display: flex;
   margin-top: 36px;
+  width: 100%;
 }
 
 .team-member {
@@ -331,6 +376,8 @@ article > h2 span{
 
 .summary {
   margin-top: 60px;
+  grid-area: summary;
+  width: 65.16%;
 }
 
 .summary h2 {
@@ -352,6 +399,8 @@ article > h2 span{
 
 .main-takeaway {
   margin-top: 48px;
+  grid-area: main-takeaway;
+  width: 65.16%;
 }
 
 .main-takeaway h2 {
@@ -367,6 +416,8 @@ article > h2 span{
 
 .problems {
   margin-top: 60px;
+  grid-area: problems;
+  width: 65.16%;
 }
 
 .problems h4 {
@@ -383,17 +434,8 @@ article > h2 span{
 
 .reason-to-partner {
   margin-top: 60px;
-}
-
-.reason-to-partner h2 {
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 48px;
-  color: #303033;
-}
-
-.reason-to-partner {
-  margin-top:60px;
+  grid-area: reason-to-partner;
+  width: 65.16%;
 }
 
 .reason-to-partner h2 {
@@ -421,6 +463,8 @@ article > h2 span{
 
 .what-we-did {
   margin-top: 60px;
+  grid-area: what-we-did;
+  width: 65.16%;
 }
 
 .what-we-did h2 {
@@ -485,6 +529,8 @@ article > h2 span{
 
 .results {
   margin-top: 60px;
+  grid-area: results;
+  width: 65.16%;
 }
 
 .results h2 {
@@ -538,10 +584,14 @@ article > h2 span{
 
 .results img {
   padding-top: 36px;
+  width: 100%;
+  height: auto;
 }
 
 .tags {
   margin-top: 60px;
+  grid-area: tags;
+  width: 65.16%;
 }
 
 .tags ul {
@@ -561,6 +611,319 @@ article > h2 span{
   margin-right: 12px;
   margin-bottom: 12px;
   padding: 0 12px;
+}
+
+
+@media (max-width: 1440px) {
+  .container{
+    max-width: 970px;
+  }
+
+  .team-member {
+    display: flex;
+    margin-right: 12px;
+  }
+  
+  .team-members dl dt {
+    font-size: 20px;
+    line-height: 25px;
+    color: #111111;
+  }
+
+  .team-members dl dd {
+    font-size: 16px;
+    line-height: 20px;
+    color: #2B2B2B;
+    opacity: 0.48;
+  }
+}
+
+@media (max-width: 992px) {
+  .container{
+    max-width: 750px;
+    grid-template-columns: 1fr;
+    grid-template-areas:"back-to-cases"
+                        "main-h2"
+                        "results-table"
+                        "short-descr"
+                        "case-data"
+                        "CCO-container"
+                        "company-descr"
+                        "team"
+                        "summary"
+                        "main-takeaway"
+                        "problems"
+                        "reason-to-partner"
+                        "what-we-did"
+                        "results"
+                        "tags"
+                        "social-bar";
+  }
+
+  .main-h2,
+  .results-table,
+  .short-descr,
+  .case-data,
+  .CCO-container,
+  .company-descr,
+  .team,
+  .summary,
+  .main-takeaway,
+  .problems,
+  .reason-to-partner, 
+  .what-we-did,
+  .results,
+  .tags,
+  .social-bar {
+    width: 100%
+  }
+
+  article::before {
+    right: -1000px;
+  }
+
+  article::after {
+    right: -1200px;
+  }
+
+  .results-table {
+    height: auto;
+  }
+
+  .short-descr {
+    margin-top: 24px;
+    flex-direction: row;
+    margin-bottom: 24px;
+  }
+
+  .short-descr div {
+    margin-right: 72px;
+  }
+  
+  .short-descr div:last-child {
+    display: block;
+  }
+
+  .short-descr div:first-child {
+    margin-top: 24px
+  }
+
+  .short-descr dt {
+    font-size: 16px;
+  }
+
+  .short-descr dd {
+    font-size: 18px;
+  }
+
+  .case-data {
+    display: none;
+  }
+
+  .team-member {
+    display: flex;
+    margin-right: 72px;
+  }
+
+}
+
+@media (max-width: 767px) {
+    .container{
+    max-width: none;
+    grid-template-columns: 1fr;
+    grid-template-areas:"back-to-cases"
+                        "main-h2"
+                        "results-table"
+                        "short-descr"
+                        "case-data"
+                        "CCO-container"
+                        "company-descr"
+                        "team"
+                        "summary"
+                        "main-takeaway"
+                        "problems"
+                        "reason-to-partner"
+                        "what-we-did"
+                        "results"
+                        "tags"
+                        "social-bar";
+    padding-left: 24px;
+    padding-right: 24px
+  }
+
+  article::before {
+    right: 200px;
+    top: 450px
+  }
+
+  article::after {
+    right: 0px;
+  }
+
+  .animation-wrapper::before {
+    bottom: 2550px;
+    left: 172px;
+  }
+
+  .animation-wrapper::after{
+    bottom: 2400px;
+    left: 0px;
+  }
+
+  .main-h2,
+  .results-table,
+  .short-descr,
+  .case-data,
+  .CCO-container,
+  .company-descr,
+  .team,
+  .summary,
+  .main-takeaway,
+  .problems,
+  .reason-to-partner, 
+  .what-we-did,
+  .results,
+  .tags,
+  .social-bar {
+    width:100%
+  }
+
+  .main-h2,
+  .team h3,
+  .summary h2,
+  .main-takeaway h2,
+  .problems h2,
+  .reason-to-partner h2,
+  .what-we-did h2,
+  .results h2 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .summary p,
+  .main-takeaway p,
+  .problems p,
+  .reason-to-partner li,
+  .what-we-did > dl > dt,
+  .what-we-did > dl > dd,
+  .results p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+
+  .results-table {
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .results-table div {
+    width: 48%;
+    margin-bottom: 12px;
+  }
+
+  .results-table dt {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .results-table dd {
+    width: 90%;
+  }
+
+  .short-descr {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 60px;
+    margin-bottom: 0;
+  }
+
+  .short-descr div {
+    width: 48%;
+    margin: 0;
+    margin-top: 36px;
+  }
+  
+  .short-descr div:first-child,
+  .short-descr div:nth-child(2) {
+    margin-top: 0px;
+  }
+
+  .short-descr div:last-child {
+    display: block;
+  }
+
+  .case-data {
+    display: none;
+  }
+
+  .CCO-container {
+    margin-top: 60px;
+  }
+
+  .CCO-container img {
+    height: 60px;
+    width: 60px;
+    margin-left: 12px;
+  }
+
+  .company-descr {
+    font-size: 16px;
+    line-height: 24px;
+
+  }
+
+  .team-members {
+    flex-wrap: wrap;
+  }
+
+  .team-member {
+    display: flex;
+    margin-right: 12px;
+    margin-bottom: 24px;
+  }
+
+  .team-member dl {
+    align-self: center;
+  }
+
+  .what-we-did ul {
+    flex-wrap: wrap;
+  }
+
+  .what-we-did li {
+    width: 100%;
+  }
+
+  .what-we-did li dl{
+    margin-top: 24px;
+  }
+
+  .what-we-did li dl dd {
+    font-size: 48px;
+    line-height: 60px
+  }
+
+  .results ul{
+    flex-wrap: wrap;
+  }
+
+  .results li {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  .tags {
+    margin-top: 12px;
+  }
+
+  .social-bar {
+    margin-top: 48px;
+  }
+
+  .main-h2 {
+    margin-top: 38px;
+  }
 }
 
 @keyframes circle-rotation {
